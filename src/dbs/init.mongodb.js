@@ -1,41 +1,38 @@
-'use strict'
-const mongoose = require('mongoose')
-const { countConnect } = require("../helpers/check.connect.js")
+"use strict";
+const mongoose = require("mongoose");
+const {
+  db: { host, port, name },
+} = require("../configs/config.mongodb.js");
+const { countConnect } = require("../helpers/check.connect.js");
 
-const connectString = 'mongodb+srv://quynguyen:root@quynguyen.btv8uyn.mongodb.net/webApp?retryWrites=true&w=majority'
+const connectString = `mongodb://${host}:${port}/${name}`;
 
 class Database {
+  constructor() {
+    this.connect();
+  }
 
-    constructor() {
-        this.connect();
+  async connect() {
+    try {
+      if (1 === 1) {
+        mongoose.set("debug", true);
+        mongoose.set("debug", { color: true });
+      }
+      await mongoose.connect(connectString);
+      console.log("Connected to MongoDB successfully");
+      // countConnect();
+    } catch (error) {
+      console.error("Error connecting to MongoDB:", error);
     }
+  }
 
-    // connect
-    connect() {
-        // dev
-        if (1 === 1) {
-            mongoose.set('debug', true)
-            mongoose.set('debug', { color: true })
-        }
-
-        mongoose.connect(connectString)
-            .then(() => {
-                console.log('Connected to MongoDB successfully')
-                countConnect();
-            }
-                // You can start your application logic here
-            )
-            .catch((error) => {
-                console.error('Error connecting to MongoDB:', error);
-            });
+  static getInstance() {
+    if (!Database.instance) {
+      Database.instance = new Database();
     }
-    static getInstance() {
-        if (!Database.instance) {
-            Database.instance = new Database();
-        }
-        return Database.instance;
-    }
+    return Database.instance;
+  }
 }
 
-const instanceMongodb = Database.getInstance()
+const instanceMongodb = Database.getInstance();
 module.exports = instanceMongodb;
