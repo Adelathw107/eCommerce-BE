@@ -16,6 +16,9 @@ const productSchema = new Schema({
     product_description: {
         type: String
     },
+    product_slug: {
+        type: String // 
+    },
     product_price: {
         type: Number,
         required: true
@@ -27,7 +30,7 @@ const productSchema = new Schema({
     product_type: {
         type: String,
         required: true,
-        enum: ['Electronics', 'Clothing', 'Furniture']
+        enum: ['Electronics', 'Clothing', 'Furnitures']
     },
     product_shop: {
         type: Schema.Types.ObjectId,
@@ -36,7 +39,33 @@ const productSchema = new Schema({
     product_attributes: {
         type: Schema.Types.Mixed,
         required: true
-    }
+    },
+    // More
+    product_ratingsAverage: {
+        type: Number,
+        default: 4.5,
+        min: [1, "Rating must be above 1.0"],
+        max: [5, "Rating must be under 5.0"],
+        set: (val) => Math.round(val * 10) / 10
+    },
+    product_variations: {
+        type: Array,
+        default: []
+    },
+    isDraft: {
+        type: Boolean,
+        default: true,
+        index: true,
+        select: false
+    },
+    isPublished: {
+        type: Boolean,
+        default: false,
+        index: true,
+        select: false
+    },
+
+
 }, {
     timestamp: true,
     collection: COLLECTION_NAME
@@ -70,9 +99,22 @@ const electronicSchema = new Schema({
     timestamps: true
 })
 
+const furnitureSchema = new Schema({
+    manufacture: {
+        type: String,
+        require: true
+    },
+    model: String,
+    color: String
+}, {
+    collection: 'furniture',
+    timestamps: true
+})
+
 module.exports = {
     product: model(DOCUMENT_NAME, productSchema),
     clothing: model('Clothing', clothingSchema),
     electronic: model('Electronics', electronicSchema),
+    furniture: model('Furniture', furnitureSchema)
 }
 

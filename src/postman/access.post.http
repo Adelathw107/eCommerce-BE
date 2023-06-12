@@ -1,17 +1,25 @@
-@url_dev= http://localhost:3055/v1/api
+@url_dev= http://localhost:3052/v1/api
 
 ###signUp
 
-POST {{url_dev}}/shop/handlerRefreshToken
+POST {{url_dev}}/product
 # POST {{url_dev}}/product
 Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 6482e0bf5a6b44a75dbab9e2
-x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2MzgyODc2LCJleHAiOjE2ODY5ODc2NzZ9.5lRiI2X5szDnl91EPdvf2LDAdNXPkxm7zf42RJoX8sI
-# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2MzgyNTM1LCJleHAiOjE2ODY1NTUzMzV9.UV0t8zhLcdExHgDVkV3Yl6j3JE8zgACgR02suiSe-lA
+# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2MzgyODc2LCJleHAiOjE2ODY5ODc2NzZ9.5lRiI2X5szDnl91EPdvf2LDAdNXPkxm7zf42RJoX8sI
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2NTYxMjAyLCJleHAiOjE2ODY3MzQwMDJ9.Ivuk-0aJzbw8ep-RuinT7Q0F7Dk-lW9ujv5JGtp-jtY
 
 { 
-"name" :"Tuna Hynh",
-"email": "tunakay12345@abc.com",
-"password": "abc123"
+"product_name": "ddd",
+"product_thumb": "abcddasd1234",
+"product_description": "sadsa",
+"product_price": 123,
+"product_quantity": 214,
+"product_type":"Furnitures",
+"product_attributes":{
+    "brand":"TUU",
+    "size": "Xl",
+    "material":"cotton"
+}
 }

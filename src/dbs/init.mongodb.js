@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const {
   db: { host, port, name },
 } = require("../configs/config.mongodb.js");
-const { countConnect } = require("../helpers/check.connect.js");
+// const { countConnect, checkOverLoad } = require("../helpers/check.connect.js");
 
 const connectString = `mongodb://${host}:${port}/${name}`;
 
@@ -21,6 +21,7 @@ class Database {
       await mongoose.connect(connectString);
       console.log("Connected to MongoDB successfully");
       // countConnect();
+      // checkOverLoad();
     } catch (error) {
       console.error("Error connecting to MongoDB:", error);
     }
