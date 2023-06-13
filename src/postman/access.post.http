@@ -2,23 +2,26 @@
 
 ###signUp
 
-POST {{url_dev}}/product
+
+# POST {{url_dev}}/product/unpublish/648758e96bb0b3902eb54a3d
 # POST {{url_dev}}/product
+# GET  {{url_dev}}/product/drafts/all
+GET {{url_dev}}/product/search/ao mua
 Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
-x-client-id: 6482e0bf5a6b44a75dbab9e2
-# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2MzgyODc2LCJleHAiOjE2ODY5ODc2NzZ9.5lRiI2X5szDnl91EPdvf2LDAdNXPkxm7zf42RJoX8sI
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2NTYxMjAyLCJleHAiOjE2ODY3MzQwMDJ9.Ivuk-0aJzbw8ep-RuinT7Q0F7Dk-lW9ujv5JGtp-jtY
+# x-client-id: 6482e0bf5a6b44a75dbab9e2
+# # x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2MzgyODc2LCJleHAiOjE2ODY5ODc2NzZ9.5lRiI2X5szDnl91EPdvf2LDAdNXPkxm7zf42RJoX8sI
+# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2NTYxMjAyLCJleHAiOjE2ODY3MzQwMDJ9.Ivuk-0aJzbw8ep-RuinT7Q0F7Dk-lW9ujv5JGtp-jtY
 
 { 
-"product_name": "ddd",
-"product_thumb": "abcddasd1234",
-"product_description": "sadsa",
-"product_price": 123,
-"product_quantity": 214,
-"product_type":"Furnitures",
+"product_name": "Áo mưa đi chợ Việt Nam",
+"product_thumb": "abc.jpg",
+"product_description": "áo được làm từ chất liệu vải dù khô thoáng, ngăn nước dù chỉ là những hạt nước nhỏ bé",
+"product_price": 323,
+"product_quantity": 10000,
+"product_type":"Clothing",
 "product_attributes":{
-    "brand":"TUU",
+    "brand":"ABC",
     "size": "Xl",
     "material":"cotton"
 }
