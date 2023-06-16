@@ -7,6 +7,9 @@ const productController = require("../../controllers/product.controller.js");
 const { asyncHandler } = require("../../helpers/asyncHandler.js");
 
 router.get('/search/:keySearch', asyncHandler(productController.getListSearchProduct))
+router.get('/find', asyncHandler(productController.findAllProducts))
+router.get('/findbyid/:product_id', asyncHandler(productController.findProduct))
+
 
 // authentication
 router.use(authenticationV2)
@@ -14,8 +17,10 @@ router.use(authenticationV2)
 
 // post 
 router.post('', asyncHandler(productController.createProduct))
-router.post('/publish/:id', asyncHandler(productController.publishProductByShop))
-router.post('/unpublish/:id', asyncHandler(productController.unPublishProductByShop))
+router.patch('/:productId', asyncHandler(productController.updateProduct))
+
+router.post('/publish/:productId', asyncHandler(productController.publishProductByShop))
+router.post('/unpublish/:productId', asyncHandler(productController.unPublishProductByShop))
 
 
 // get

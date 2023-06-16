@@ -76,7 +76,6 @@ const authenticationV2 = asyncHandler(async (req, res, next) => {
     }
 
     const accessToken = req.headers[HEADER.AUTHORZATION]
-    console.log('AccessToken::', accessToken);
 
     if (!accessToken) throw new AuthFailureError('Invalid Request')
 

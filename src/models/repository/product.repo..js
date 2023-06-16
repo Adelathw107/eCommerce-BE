@@ -1,7 +1,7 @@
 'use strict'
 const { product, electronic, clothing, furniture } = require('../../models/product.model')
 const { Types: { ObjectId } } = require('mongoose')
-const { getSelectData } = require('../../utils')
+const { getSelectData, unGetSelectData } = require('../../utils')
 
 // create query 
 const queryProduct = async ({ query, limit, skip }) => {
@@ -43,7 +43,6 @@ const publishProductByShop = async ({ product_shop, product_id }) => {
     foundShop.isDraft = false
     foundShop.isPublished = true
     const { modifiedCount } = await foundShop.updateOne(foundShop)
-    console.log(modifiedCount);
     return modifiedCount;
 }
 
@@ -71,8 +70,22 @@ const findAllProducts = async ({ limit, sort, page, filter, select }) => {
         .select(getSelectData(select))
         .lean()
     return products
-
 }
+const findProduct = async ({ product_id, unSelect }) => {
+    return await product.findById(product_id).select(unGetSelectData(unSelect))
+}
+
+const updateProductById = async ({
+    productId,
+    payload,
+    model,
+    isNew = true
+}) => {
+    return await model.findByIdAndUpdate(productId, payload, {
+        new: isNew
+    })
+}
+
 
 module.exports = {
     findAllDraftsForShop,
@@ -80,5 +93,7 @@ module.exports = {
     findAllPublishesForShop,
     unPublishProductByShop,
     searchProductsByUser,
-    findAllProducts
+    findAllProducts,
+    findProduct,
+    updateProductById
 }

@@ -16,6 +16,17 @@ class ProductController {
     }).send(res)
   }
 
+
+  updateProduct = async (req, res, next) => {
+    new SuccessResponse({
+      message: "Update Product success",
+      metaData: await ProductFactoryV2.updateProduct(req.body.product_type, {
+        ...req.body,
+        product_shop: req.user.userId // req.user in authjs
+      }, req.params.productId)
+    }).send(res)
+  }
+
   // QUERY 
   /**
    * @desc Get all drafts for shop
@@ -44,6 +55,20 @@ class ProductController {
       metaData: await ProductFactoryV2.searchProductsByUser(req.params.keySearch)
     }).send(res)
   }
+  findAllProducts = async (req, res, next) => {
+    new SuccessResponse({
+      message: "Get findAllProducts success",
+      metaData: await ProductFactoryV2.findAllProducts()
+    }).send(res)
+  }
+  findProduct = async (req, res, next) => {
+    new SuccessResponse({
+      message: "Get findProduct success",
+      metaData: await ProductFactoryV2.findProduct({
+        product_id: req.params.product_id
+      })
+    }).send(res)
+  }
   // END QUERY 
 
 
@@ -52,7 +77,7 @@ class ProductController {
       message: "Change product to publish Success!!!",
       metaData: await ProductFactoryV2.publishProductByShop({
         product_shop: req.user.userId,
-        product_id: req.params.id
+        product_id: req.params.productId
       })
     }).send(res)
   }
@@ -62,13 +87,10 @@ class ProductController {
       message: "Change product to publish Success!!!",
       metaData: await ProductFactoryV2.unPublishProductByShop({
         product_shop: req.user.userId,
-        product_id: req.params.id
+        product_id: req.params.productId
       })
     }).send(res)
   }
-
-
-
 
 }
 
