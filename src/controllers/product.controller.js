@@ -2,7 +2,7 @@
 
 const { CREATED, SuccessResponse } = require("../core/success.response");
 // const ProductFactory = require("../services/product.service");
-const ProductFactoryV2 = require("../services/product.service.xx");
+const ProductFactoryV2 = require("../services/product.service");
 
 
 class ProductController {

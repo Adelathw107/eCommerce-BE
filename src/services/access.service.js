@@ -7,6 +7,7 @@ const { createTokenPair, verifyJWT } = require('../auth/authUtils.js')
 const { getInfoData } = require('../utils/index.js')
 const { BadRequestError, AuthFailureError, ForbiddenError } = require('../core/error.response.js')
 const { findByEmail } = require('./shop.service.js')
+const { userValidate } = require('../helpers/validation.js')
 
 const roleShop = {
     SHOP: 'SHOP',
@@ -28,7 +29,7 @@ class AccessService {
         if (keyStore.refreshToken !== refreshToken) throw new AuthFailureError('Shop not registed')
 
         const foundShop = await findByEmail({ email })
-        if (!foundShop) throw new AuthFailureError("Shop not registed")
+        if (!foundShop) throw new AuthFailureError('Shop not registed')
 
 
         // Check xem token nay da duoc su dung chua
@@ -45,7 +46,7 @@ class AccessService {
             throw new ForbiddenError('Something wrong happen !! Please relogin')
         }
 
-        
+
         // NO, good, account is safe
         const holderToken = await keyTokenService.findByRefreshToken(refreshToken)
 
@@ -84,12 +85,12 @@ class AccessService {
         const foundShop = await findByEmail({ email })
         // 1.
         if (!foundShop)
-            throw new BadRequestError("Shop is not correct!")
+            throw new BadRequestError('Shop is not correct!')
 
         // 2.
         const match = await bcrypt.compare(password, foundShop.password)
 
-        if (!match) throw new AuthFailureError("Password is not correct")
+        if (!match) throw new AuthFailureError('Password is not correct')
 
         // 3.
         const privateKey = crypto.randomBytes(64).toString('hex');
@@ -117,11 +118,17 @@ class AccessService {
 
     static signUp = async ({ name, email, password }) => {
 
+        const { error } = userValidate({ email, password })
+
+        if (error) {
+            const message = error.details[0].message
+            throw new BadRequestError(message)
+        }
         // step 1: Check mail exist ?
         const holdelShop = await shopModel.findOne({ email }).lean()
 
         if (holdelShop) {
-            throw new BadRequestError("Error:: Shop already register")
+            throw new BadRequestError('Error:: Shop already register')
         }
         const passwordHashed = await bcrypt.hash(password, 10)
         const newShop = await shopModel.create({
@@ -133,8 +140,7 @@ class AccessService {
             const privateKey = crypto.randomBytes(64).toString('hex');
             const publicKey = crypto.randomBytes(64).toString('hex');
 
-
-            console.log({ privateKey, publicKey }) // save collection KeyStore
+            // console.log({ privateKey, publicKey }) // save collection KeyStore
 
             const keyStore = await keyTokenService.createKeyToken({
                 userId: newShop._id,
@@ -143,14 +149,14 @@ class AccessService {
             })
 
             if (!keyStore) {
-                throw new BadRequestError("Error:: KeyStore is error")
+                throw new BadRequestError('Error:: KeyStore is error')
             }
             // const publicKeyObject = crypto.createPublicKey(publicKeyString)
 
             // create token pair
             const tokens = await createTokenPair({ userId: newShop._id, email }, publicKey, privateKey)
 
-            console.log(`Created Token Success ::`, tokens);
+            // console.log(`Created Token Success ::`, tokens);
 
             return {
                 code: 201,

@@ -1,5 +1,13 @@
 'use strict';
-const { Schema, model, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
+/**
+ * @field
+ * poruductId 
+ * location 
+ * stock 
+ * shopId 
+ * reservations
+ */
 
 const DOCUMENT_NAME = 'Inventory'
 const COLLECTION_NAME = 'Inventories'

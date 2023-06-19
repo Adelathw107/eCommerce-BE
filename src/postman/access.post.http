@@ -1,30 +1,146 @@
 @url_dev= http://localhost:3052/v1/api
 
-###signUp
+### SigUp
+POST  {{url_dev}}/shop/signUp
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 
-# POST  {{url_dev}}/shop/login
-# POST {{url_dev}}/product/publish/648758e96bb0b3902eb54a3d
-# POST {{url_dev}}/product
-PATCH {{url_dev}}/product/648758e96bb0b3902eb54a3d
-# GET  {{url_dev}}/product/drafts/all
+{ 
+  "name": "abc123",
+  "email": "abc11@gmail.com",
+  "password": "abc1234"
+}
+
+### Login
+POST  {{url_dev}}/shop/login
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+
+{ 
+  "email": "abc1234@abc.com",
+  "password": "abc123"
+}
+
+
+### GET product: allDraft, all publish, find by id
+GET  {{url_dev}}/product/drafts/all 
+# GET  {{url_dev}}/product/publish/all 
 # GET {{url_dev}}/product/findbyid/648758e96bb0b3902eb54a3d
 Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
-# # x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2MzgyODc2LCJleHAiOjE2ODY5ODc2NzZ9.5lRiI2X5szDnl91EPdvf2LDAdNXPkxm7zf42RJoX8sI
-# authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4NjczNDgwMCwiZXhwIjoxNjg2OTA3NjAwfQ.IUym9tCFQ1NMVo16XcCduj5k7JwSjuhEi19Z-gEfzMw
+# x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2MzgyODc2LCJleHAiOjE2ODY5ODc2NzZ9.5lRiI2X5szDnl91EPdvf2LDAdNXPkxm7zf42RJoX8sI
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4Njg4Nzg5NCwiZXhwIjoxNjg3NDkyNjk0fQ.eAY7sZme8MQ6ubUJV5BpGUGay1bmACS_2604Cig5bAo
+
+{}
+
+
+### publish and unpublish Product
+POST {{url_dev}}/product/publish/648fe0b59597d81ba3dd1356
+# POST {{url_dev}}/product/unpublish/648758e96bb0b3902eb54a3d
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-client-id: 647ed6cc3ac55a7f5842b8f6
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4NzE0ODY3MywiZXhwIjoxNjg3MzIxNDczfQ.ft4W49tD7urM306Lz6PD824LRc91GuyN4yThwulL2Mo
+
+{}
+
+### create Product
+POST {{url_dev}}/product
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-client-id: 647ed6cc3ac55a7f5842b8f6
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4NzE0ODY3MywiZXhwIjoxNjg3MzIxNDczfQ.ft4W49tD7urM306Lz6PD824LRc91GuyN4yThwulL2Mo
 
 { 
-  "product_name": "Áo chống thấm nước thương hiệu Việt Nam updated 2",
+  "product_name": "Áo khoác ngoài hàng nhật",
     "product_thumb": "abc.jpg",
     "product_description": "áo đucợ làm từ chất liệu vải dù khô thoáng, ngăn nước dù chỉ là những hạt nước nhỏ bé",
-    "product_price": null,
+    "product_price": 30000,
     "product_quantity": 12333,
     "product_type": "Clothing",
-    "product_shop": "6482e0bf5a6b44a75dbab9e2",
     "product_attributes": {
       "brand": "ABC updated",
-      "size": null,
+      "size": "XLL",
       "material": "cotton 2"
     }
 }
+
+### update product
+PATCH {{url_dev}}/product/648bda529cbcb91ed8642ec7
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-client-id: 647ed6cc3ac55a7f5842b8f6
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4NzE0ODY3MywiZXhwIjoxNjg3MzIxNDczfQ.ft4W49tD7urM306Lz6PD824LRc91GuyN4yThwulL2Mo
+
+{ 
+  "product_name": "Áo khoác ngoài hàng nhật",
+    "product_thumb": "abc.jpg",
+    "product_description": "áo đucợ làm từ chất liệu vải dù khô thoáng, ngăn nước dù chỉ là những hạt nước nhỏ bé",
+    "product_price": 30000,
+    "product_quantity": 12333,
+    "product_type": "Clothing",
+    "product_attributes": {
+      "brand": "ABC updated",
+      "size": "XLL",
+      "material": "cotton 2"
+    }
+}
+
+###Discount
+#------------------
+###Create Discount
+POST {{url_dev}}/discount
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-client-id: 647ed6cc3ac55a7f5842b8f6
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4NzE0ODY3MywiZXhwIjoxNjg3MzIxNDczfQ.ft4W49tD7urM306Lz6PD824LRc91GuyN4yThwulL2Mo
+
+{ 
+"name": "Coupon 50K",
+"description": "Giam 60k",
+"type": "fixed_amount",
+"value":30000,
+"max_value": 50000,
+"code": "SHOPTUNA-566",
+"start_date": "2023-06-20 09:00:00",  
+"end_date": "2023-06-21 09:00:00",  
+"max_uses": 100,
+"uses_count": 0,
+"users_used": [],
+"max_uses_per_user": 1,
+"min_order_value": 200000,
+"is_active": true,
+"applies_to": "all",
+"product_ids": ["64819680eea1169cc9e255d5","648758e96bb0b3902eb54a3d"]
+
+}
+
+#------------------
+###Get All products with discountCode 
+GET {{url_dev}}/discount/list_product_code?code=SHOPTUNA-5555&shopId=647ed6cc3ac55a7f5842b8f6
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+
+{}
+
+#------------------
+###Get amount when applies discount
+POST {{url_dev}}/discount/amount
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+
+{
+"code":"SHOPTUNA-566",
+"userId": 2,
+"shopId": "647ed6cc3ac55a7f5842b8f6",
+"products":[
+  {
+    "productId":"648bda529cbcb91ed8642ec7",
+    "quantity": 10,
+    "price": 30000
+  }
+]
+
+}
+
