@@ -71,8 +71,8 @@ const findAllProducts = async ({ limit = 50, sort, page = 1, filter, select }) =
         .lean()
     return products
 }
-const findProduct = async ({ product_id, unSelect }) => {
-    return await product.findById(product_id).select(unGetSelectData(unSelect))
+const findProduct = async ({ product_id, unSelect = [] }) => {
+    return await product.findById(product_id).select(unGetSelectData(unSelect)).lean()
 }
 
 const updateProductById = async ({

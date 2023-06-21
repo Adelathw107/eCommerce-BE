@@ -141,6 +141,20 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
     "price": 30000
   }
 ]
-
 }
 
+###Cart
+###add to cart
+POST {{url_dev}}/cart
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+
+{
+"userId": 6,
+"product":
+  {
+    "productId":"648bda529cbcb91ed8642ec7",
+    "shopId": "647ed6cc3ac55a7f5842b8f6",
+    "quantity": 40
+  }
+}
