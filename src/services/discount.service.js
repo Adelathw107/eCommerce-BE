@@ -215,7 +215,7 @@ class DiscountServices {
 
         if (!discount_max_uses) throw new NotFoundError('discount are out!')
 
-        if (new Date() > new Date(discount_start_date) || new Date() > new Date(discount_end_date) || new Date(discount_start_date) >= new Date(discount_end_date)) throw NotFoundError(`discount ecode has expried`)
+        if (new Date() > new Date(discount_end_date) || new Date(discount_start_date) >= new Date(discount_end_date)) throw new NotFoundError(`discount ecode has expried`)
 
         // Check xem co set gia tri toi thieu hay khong
         let totalOrder = 0

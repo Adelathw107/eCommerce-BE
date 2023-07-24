@@ -30,7 +30,7 @@ Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
 # x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2MzgyODc2LCJleHAiOjE2ODY5ODc2NzZ9.5lRiI2X5szDnl91EPdvf2LDAdNXPkxm7zf42RJoX8sI
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4Njg4Nzg5NCwiZXhwIjoxNjg3NDkyNjk0fQ.eAY7sZme8MQ6ubUJV5BpGUGay1bmACS_2604Cig5bAo
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4OTg0MDgwMywiZXhwIjoxNjkwMDEzNjAzfQ.RM9M9hxl-6gEw3K_JpBPndYEtmylmULK6Q-laO6I_BA
 
 {}
 
@@ -41,7 +41,7 @@ POST {{url_dev}}/product/publish/648fe0b59597d81ba3dd1356
 Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4NzE0ODY3MywiZXhwIjoxNjg3MzIxNDczfQ.ft4W49tD7urM306Lz6PD824LRc91GuyN4yThwulL2Mo
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4OTg0MDgwMywiZXhwIjoxNjkwMDEzNjAzfQ.RM9M9hxl-6gEw3K_JpBPndYEtmylmULK6Q-laO6I_BA
 
 {}
 
@@ -50,7 +50,7 @@ POST {{url_dev}}/product
 Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4NzE0ODY3MywiZXhwIjoxNjg3MzIxNDczfQ.ft4W49tD7urM306Lz6PD824LRc91GuyN4yThwulL2Mo
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4OTg0MDgwMywiZXhwIjoxNjkwMDEzNjAzfQ.RM9M9hxl-6gEw3K_JpBPndYEtmylmULK6Q-laO6I_BA
 
 { 
   "product_name": "Áo khoác ngoài hàng nhật",
@@ -71,7 +71,7 @@ PATCH {{url_dev}}/product/648bda529cbcb91ed8642ec7
 Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4NzE0ODY3MywiZXhwIjoxNjg3MzIxNDczfQ.ft4W49tD7urM306Lz6PD824LRc91GuyN4yThwulL2Mo
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4OTg0MDgwMywiZXhwIjoxNjkwMDEzNjAzfQ.RM9M9hxl-6gEw3K_JpBPndYEtmylmULK6Q-laO6I_BA
 
 { 
   "product_name": "Áo khoác ngoài hàng nhật",
@@ -94,17 +94,17 @@ POST {{url_dev}}/discount
 Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4NzE0ODY3MywiZXhwIjoxNjg3MzIxNDczfQ.ft4W49tD7urM306Lz6PD824LRc91GuyN4yThwulL2Mo
+authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4OTg0MDgwMywiZXhwIjoxNjkwMDEzNjAzfQ.RM9M9hxl-6gEw3K_JpBPndYEtmylmULK6Q-laO6I_BA
 
 { 
 "name": "Coupon 50K",
-"description": "Giam 60k",
+"description": "Giam 50k",
 "type": "fixed_amount",
-"value":30000,
+"value":50000,
 "max_value": 50000,
-"code": "SHOPTUNA-566",
-"start_date": "2023-06-20 09:00:00",  
-"end_date": "2023-06-21 09:00:00",  
+"code": "SHOPTUNA-50K",
+"start_date": "2023-07-21 09:00:00",  
+"end_date": "2023-08-21 09:00:00",  
 "max_uses": 100,
 "uses_count": 0,
 "users_used": [],
@@ -112,7 +112,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNh
 "min_order_value": 200000,
 "is_active": true,
 "applies_to": "all",
-"product_ids": ["64819680eea1169cc9e255d5","648758e96bb0b3902eb54a3d"]
+"product_ids": ["648825f28cbf7c9ef56c0197","648758e96bb0b3902eb54a3d"]
 
 }
 
@@ -131,7 +131,7 @@ Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 
 {
-"code":"SHOPTUNA-566",
+"code":"SHOPTUNA-40K",
 "userId": 2,
 "shopId": "647ed6cc3ac55a7f5842b8f6",
 "products":[
@@ -144,17 +144,103 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
 }
 
 ###Cart
-###add to cart
+### Add to cart
 POST {{url_dev}}/cart
 Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 
 {
-"userId": 6,
+"userId": 400,
 "product":
   {
     "productId":"648bda529cbcb91ed8642ec7",
-    "shopId": "647ed6cc3ac55a7f5842b8f6",
-    "quantity": 40
+    "quantity": 12
   }
+}
+
+### Delete cart item
+DELETE {{url_dev}}/cart
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+
+{
+"userId": 400,
+"productId":"6489273fe2373cd40ee5ca87"
+
+}
+
+### Get list cart item
+GET {{url_dev}}/cart?userId=400
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+
+{
+"userId": 400
+}
+
+### update cart item
+POST {{url_dev}}/cart/update
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+
+{
+  "userId": 400,
+"shop_order_ids" :[
+  {
+   "shopId": "647ed6cc3ac55a7f5842b8f6",
+    "item_products":
+    [
+      {
+           "quantity" : 12,
+           "shopId": "647ed6cc3ac55a7f5842b8f6" ,
+           "old_quantity": 62,
+           "productId": "648bda529cbcb91ed8642ec7"
+    }
+   ]
+    ,
+    "version": 203
+  }
+]
+}
+
+
+### checkout review
+POST {{url_dev}}/checkout/review 
+Content-Type: application/json
+x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+
+  #  cartId,
+  #  userId,
+  #      shop_order_ids:[
+  #      shopId,
+  #      shop_discount: {
+  #            shopId,
+  #            discountId,
+  #            codeId
+  #      },
+  #      item_products: [
+  #                  {
+  #                  price,
+  #                  quantity,
+  #                  productId
+  #                  }
+  #               ]
+  #      ]
+{
+  "cartId": "64926ec6f42f1e22a7fddfab",
+  "userId": 400,
+  "shop_order_ids" :[
+  {
+   "shopId": "6482e0bf5a6b44a75dbab9e2",
+    "item_products":
+    [
+      {
+           "quantity" : 29,
+           "price": "333",
+           "productId": "648825f28cbf7c9ef56c0197"
+     }
+   ],
+   "shop_discount": []
+  }
+]
 }

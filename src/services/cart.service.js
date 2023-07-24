@@ -20,24 +20,40 @@ class CartService {
 
     static async addToCart({ userId, product = {} }) {
         // check cart ton tai hay khong?
-        const userCart = await cartModel.findOne({ cart_userId: userId }).lean()
+        const userCart = await cartModel.findOne({ cart_userId: userId })
+
+        const foundProduct = await findProduct({ product_id: product.productId })
+        const { product_name, product_price, product_shop } = foundProduct
+        product.name = product_name;
+        product.price = product_price;
+        product.shopId = product_shop;
+
         if (!userCart) {
             // create cart for user
             return await createUserCart({ userId, product })
         }
+
         // if have cart but it empty
         if (!userCart.cart_products.length) {
             userCart.cart_products = [product]
             return await userCart.save()
         }
 
-        // if have cart, and product is the same then update quantity product
-        return await updateUserCartQuantity({ userId, product })
+        // Check if product already exists in cart 
+        const existingProduct = userCart.cart_products.find(p => p.productId === product.productId)
+
+        if (existingProduct) { return await updateUserCartQuantity({ userId, product }) }
+        else {
+            // Add new product to cart 
+            userCart.cart_products.push(product)
+            return await userCart.save()
+        }
+
     }
 
     /**
      * udpate cart 
-     * shop_order_ids :[
+     * shop_order_ids :{
      * shopId,
      * item_products:[
      *          {
@@ -45,17 +61,18 @@ class CartService {
             * price,
             * shopId,
             * old_quantity: ,
-            * productid
+            * productId
             * }
      * ],
      * version: 
-     * ]
+     * }
      */
-    static async addToCartV2({ userId, product = {} }) {
-        const { productId, quantity, old_quantity } = shop_order_ids[0]?.item_products[0]
+    static async addToCartV2({ userId, shop_order_ids = {} }) {
 
+        const { productId, quantity, old_quantity } = shop_order_ids[0]?.item_products[0]
         // check product
-        const foundProduct = await findProduct({ productId })
+        const foundProduct = await findProduct({ product_id: productId })
+
         if (!foundProduct) throw new NotFoundError("Product not exist")
 
         // Compare
@@ -64,24 +81,24 @@ class CartService {
         }
 
         if (quantity === 0) {
-            // deleted
+            return deleteUserCart({ userId, productId })
         }
+
         return await updateUserCartQuantity({
-            userId, product: {
+            userId,
+             product: {
                 productId,
                 quantity: quantity - old_quantity
             }
         })
-
-
     }
 
     static async deleteUserCart({ userId, productId }) {
         return deleteUserCart({ userId, productId })
     }
 
-    static async getListUserCart({ userId, product = {} }) {
-        return await cart.findOne({
+    static async getListUserCart({ userId }) {
+        return await cartModel.findOne({
             cart_userId: userId
         }).lean()
     }

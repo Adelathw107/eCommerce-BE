@@ -1,14 +1,11 @@
 'use strict'
 
+const { convertToObjectIdMongodb } = require("../../utils")
 const cartModel = require("../cart.model")
 const { findProduct } = require("./product.repo.")
 
 const createUserCart = async ({ userId, product }) => {
 
-    const foundProduct = await findProduct({ product_id: product.productId })
-    const { product_name, product_price } = foundProduct
-    product.name = product_name;
-    product.price = product_price;
     const query = { cart_userId: userId, cart_state: 'active' }
     const updateOrInsert = {
         $addToSet: {
@@ -21,6 +18,7 @@ const createUserCart = async ({ userId, product }) => {
 }
 
 const updateUserCartQuantity = async ({ userId, product }) => {
+
     const { productId, quantity } = product
     const query = {
         cart_userId: userId,
@@ -39,21 +37,29 @@ const updateUserCartQuantity = async ({ userId, product }) => {
 const deleteUserCart = async ({ userId, productId }) => {
     const query = {
         cart_userId: userId,
-        cart_state: 'active'
-    },
-        updateSet = {
-            $pull: {
-                cart_products: {
-                    productId
-                }
+        cart_state: 'active',
+        'cart_products.productId': productId
+    }
+    const updateSet = {
+        $pull: {
+            cart_products: {
+                productId
             }
         }
+    }
     return await cartModel.updateOne(query, updateSet)
 }
 
+const findCartById = async (cartId) => {
 
+    return await cartModel.findOne({
+        _id: convertToObjectIdMongodb(cartId),
+        cart_state: 'active',
+    }).lean()
+}
 module.exports = {
     createUserCart,
     updateUserCartQuantity,
-    deleteUserCart
+    deleteUserCart,
+    findCartById
 }
