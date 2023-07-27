@@ -4,12 +4,13 @@ const redis = require('redis')
 const { promisify } = require('util')
 const { product } = require('../models/product.model')
 const { resolve } = require('path')
+const { reservationInventory } = require('../models/repository/inventory.repo')
 const redisClient = redis.createClient()
 
 const pexpire = promisify(redisClient.pexpire).bind(redisClient)
 const setnxAsync = promisify(redisClient.setnx).bind(redisClient)
 
-const accquireLock = async (productId, quantity, cartId) => {
+const acquireLock = async (productId, quantity, cartId) => {
     const key = `lock_v2023_${productId}`;
     const retryTimes = 10;
     const expireTime = 3000;
@@ -17,11 +18,16 @@ const accquireLock = async (productId, quantity, cartId) => {
     for (let i = 0; i < retryTimes; i++) {
         const result = await setnxAsync(key, expireTime)
         console.log(`result::: `, result);
+
         if (result === 1) {
-
             // thao tac voi inventory
+            const isReversation = await reservationInventory({ productId, quantity, cartId })
+            if (isReversation.modifiedCount) {
+                await pexpire(key, expireTime)
+                return key;
+            }
 
-            return key;
+            return null;
         } else {
             await new Promise((resolve) => setTimeout(resolve, 50))
         }
@@ -31,5 +37,9 @@ const accquireLock = async (productId, quantity, cartId) => {
 const releaseLock = async keyLock => {
     const delAsyncKey = promisify(redisClient.del).bind(redisClient)
     return await delAsyncKey(keyLock)
+}
 
+module.exports = {
+    acquireLock,
+    releaseLock
 }
