@@ -2,8 +2,6 @@
 
 const redis = require('redis')
 const { promisify } = require('util')
-const { product } = require('../models/product.model')
-const { resolve } = require('path')
 const { reservationInventory } = require('../models/repository/inventory.repo')
 const redisClient = redis.createClient()
 
