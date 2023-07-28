@@ -10,8 +10,33 @@ const app = express();
 // init middlewares
 app.use(morgan("dev"));
 // combined, short, tiny
-app.use(helmet());
-app.use(compression());
+
+// content security policy
+app.use(helmet.contentSecurityPolicy({
+    directives: {
+        scriptSrc: ["'self'"],
+        styleSrc: ["'self'"],
+    },
+}))
+// x content type options
+app.use(helmet.noSniff());
+// x xss protection
+app.use(helmet.xssFilter())
+// referrer policy
+app.use(helmet.referrerPolicy({
+    policy: "no-referrer",
+}))
+
+// app.use(compression());
+// downsize response
+app.use(compression({
+    level: 6,// level compress
+    threshold: 100 * 1024, // > 100kb threshold to compress
+    filter: (req) => {
+        return !req.headers['x-no-compress'];
+    }
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extends: true }))
 
