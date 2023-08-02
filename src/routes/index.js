@@ -11,6 +11,7 @@ router.use(apiKey)
 router.use(permission('0000'))
 
 // routes
+router.use('/v1/api/redis', require('./redis'));
 router.use('/v1/api/checkout', require('./checkout'));
 router.use('/v1/api/discount', require('./discount'));
 router.use('/v1/api/inventory', require('./inventory'));

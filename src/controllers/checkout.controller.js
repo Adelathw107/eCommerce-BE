@@ -3,6 +3,7 @@
 const { SuccessResponse } = require("../core/success.response")
 const CheckoutService = require("../services/checkout.service")
 const { checkoutReview } = require("../services/checkout.service")
+const { testRedis } = require("../services/redis.service")
 
 class CheckoutController {
 
@@ -20,6 +21,12 @@ class CheckoutController {
         new SuccessResponse({
             message: 'Create new Checkout success',
             metaData: await CheckoutService.checkoutReview(req.body)
+        }).send(res)
+    }
+    testRedis = async (req, res, next) => {
+        new SuccessResponse({
+            message: 'Test Redis Success',
+            metaData: await testRedis(req.body)
         }).send(res)
     }
 

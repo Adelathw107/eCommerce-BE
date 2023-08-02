@@ -6,7 +6,6 @@ const compression = require("compression");
 
 const app = express();
 
-
 // init middlewares
 app.use(morgan("dev"));
 // combined, short, tiny
@@ -32,9 +31,11 @@ app.use(helmet.referrerPolicy({
 app.use(compression({
     level: 6,// level compress
     threshold: 100 * 1024, // > 100kb threshold to compress
+
     filter: (req) => {
         return !req.headers['x-no-compress'];
     }
+
 }));
 
 app.use(express.json());
@@ -44,6 +45,13 @@ app.use(express.urlencoded({ extends: true }))
 require("./dbs/init.mongodb.js");
 // const { countConnect, checkOverLoad } = require("./helpers/check.connect.js")
 // checkOverLoad();
+
+
+// init redis
+require('./dbs/init.redis.js')
+
+// const client = require('./dbs/init.redis.js')
+// console.log(client);
 
 // init routes
 app.use("", require("./routes/index.js"));
