@@ -8,7 +8,7 @@ const server = app.listen(PORT, () => {
 
 process.on("SIGINT", () => {
     server.close(() => {
-        console.log("Exist Server Express");
+        console.log("Exist Server");
         // notify.send(ping...)
     })
 })
