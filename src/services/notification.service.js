@@ -1,13 +1,13 @@
 'use strict';
 
-const notificationModel = require("../models/notification.model");
+const NotificationModel = require("../models/notification.model");
 
 
 class NotificationService {
 
     static async pushNotiToSystem({
         type = "SHOP-001",
-        recievedId = 1,
+        receivedId = 1,
         senderId = 1,
         options = {}
     }) {
@@ -19,16 +19,56 @@ class NotificationService {
             noti_content = `@@@ vừa thêm 1 voucher mới: @@@@@`
         }
 
-        const newNoti = await notificationModel.create({
+        const newNoti = await NotificationModel.create({
             noti_type: type,
             noti_content,
             noti_senderId: senderId,
-            noti_recievedId: recievedId,
+            noti_receivedId: receivedId,
             noti_options: options
 
         })
         return newNoti
     }
+    static async listNotiByUser({
+        userId = 1,
+        type = 'ALL',
+        isRead = 0
+    }) {
+        const match = { noti_receivedId: userId }
+
+        if (type !== 'ALL') {
+            match['noti_type'] = type
+        }
+
+        return await NotificationModel.aggregate([
+            {
+                $match: match
+            },
+            {
+                $project: {
+                    noti_type: 1,
+                    noti_senderId: 1,
+                    noti_receivedId: 1,
+                    noti_content: 1
+                    // {
+                    //     $concat: [
+                    //         {
+                    //             $substr: ['$noti_options.shop_name', 0, -1]
+                    //         },
+                    //         " vừa mới thêm 1 sản phẩm mới : ",
+                    //         {
+                    //             $substr: ['$noti_options.product_name', 0, -1]
+                    //         }
+                    //     ]
+                    // }
+                    ,
+                    noti_options: 1,
+                    createAt: 1
+                }
+            }
+        ])
+    }
+
 }
 
 

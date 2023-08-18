@@ -12,11 +12,10 @@ const COLLECTION_NAME = 'Notifications'
 
 const notificationSchema = Schema({
     noti_type: { type: String, enum: ['ORDER-001', 'ORDER-002', 'PROMOTION-001', 'SHOP-001'], required: true },
-    noti_senderId: { type: Number, required: true },
+    noti_senderId: { type: Schema.Types.ObjectId, ref: 'Shop', required: true },
     noti_receivedId: { type: Number, required: true },
     noti_content: { type: String, required: true },
-    noti_option: { type: Object, default: {} }
-
+    noti_options: { type: Object, default: {} }
 },
     {
         timestamps: true,
