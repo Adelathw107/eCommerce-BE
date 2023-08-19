@@ -69,7 +69,7 @@
 // const instanceMySql = Database.getInstance();
 // module.exports = instanceMySql;
 
-const mysql = require('mysql2/promise')
+const mysql = require('mysql2')
 
 class Database {
   constructor() {
@@ -88,6 +88,7 @@ class Database {
     }
     return pool;
   }
+
 }
 
 module.exports = new Database()
