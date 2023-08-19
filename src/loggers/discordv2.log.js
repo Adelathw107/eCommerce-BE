@@ -16,15 +16,15 @@ class LoggerService {
             ]
         })
 
-
         this.client.on('ready', () => {
             console.log(`Logger is as ${this.client.user.tag}!`);
         })
 
         // add channel id
         this.channelId = CHANNEL_ID_DISCORD;
-
-        this.client.login(TOKEN_ID_DISCORD)
+        this.client.login(TOKEN_ID_DISCORD).catch(err => {
+            console.error(err);
+        })
 
         this.client.on('messageCreate', msg => {
             if (msg.author.bot) return;
