@@ -1,0 +1,215 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample server Ecommerce server json. You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/). For this sample, you can use the api key `74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c` to test the authorization filters.",
+    "version": "1.0.0",
+    "title": "Swagger Ecommerce",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "dev.tunakite@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:3052",
+  "basePath": "/v1/api",
+  "tags": [
+    {
+      "name": "shop",
+      "description": "Operations related to the shop"
+    },
+    {
+      "name": "product",
+      "description": "Operations related to products"
+    },
+    {
+      "name": "discount",
+      "description": "Operations related to discounts"
+    },
+    {
+      "name": "cart",
+      "description": "Operations related to the shopping cart"
+    },
+    {
+      "name": "checkout",
+      "description": "Operations related to the checkout process"
+    },
+    {
+      "name": "comment",
+      "description": "Operations related to comments"
+    },
+    {
+      "name": "notification",
+      "description": "Operations related to notifications"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/shop/signUp": {
+      "post": {
+        "tags": [
+          "shop"
+        ],
+        "summary": "Sign up as a user",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "User registration data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "User registered successfully"
+          }
+        },
+        "security": [
+          {
+            "API_KEY": []
+          }
+        ]
+      }
+    },
+    "/shop/login": {
+      "post": {
+        "tags": [
+          "shop"
+        ],
+        "summary": "Login as a user",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "User login data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User logged in successfully"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "API_KEY": []
+          }
+        ]
+      }
+    },
+    "/product/published/all": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Get a list of all published products",
+        "responses": {
+          "200": {
+            "description": "List of published products"
+          }
+        },
+        "security": [
+          {
+            "API_KEY": []
+          },
+          {
+            "AUTHORZATION": []
+          },
+          {
+            "CLIENT_ID": []
+          }
+        ]
+      }
+    },
+    "/product/publish/{productId}": {
+      "post": {
+        "tags": [
+          "product"
+        ],
+        "summary": "Publish a product",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "productId",
+            "description": "ID of the product to be published",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product published successfully"
+          }
+        },
+        "security": [
+          {
+            "API_KEY": []
+          },
+          {
+            "AUTHORZATION": []
+          },
+          {
+            "CLIENT_ID": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "API_KEY": {
+      "type": "apiKey",
+      "name": "x-api-key",
+      "in": "header"
+    },
+    "AUTHORZATION": {
+      "type": "apiKey",
+      "name": "authorization",
+      "in": "header"
+    },
+    "CLIENT_ID": {
+      "type": "apiKey",
+      "name": "x-client-id",
+      "in": "header"
+    }
+  }
+}

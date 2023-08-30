@@ -1,13 +1,20 @@
 @url_dev= http://localhost:3052/v1/api
+@url_api = http://localhost:3052
+
+###api-docs
+GET {{url_api}}/api-docs
+
+{}
+
 
 ### SigUp
 POST  {{url_dev}}/shop/signUp
 Content-Type: application/json
 x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 
-{ 
-  "name": "abc123",
-  "email": "abc11@gmail.com",
+{
+  "name": "abcaa",
+  "email": "abcaaa@gmail.com",
   "password": "abc1234"
 }
 
@@ -27,10 +34,10 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
 GET  {{url_dev}}/product/published/all
 # GET {{url_dev}}/product/findbyid/648758e96bb0b3902eb54a3d
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
 # x-rtoken-id: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDgyZTBiZjVhNmI0NGE3NWRiYWI5ZTIiLCJlbWFpbCI6InR1bmFrYXkxMjM0NUBhYmMuY29tIiwiaWF0IjoxNjg2MzgyODc2LCJleHAiOjE2ODY5ODc2NzZ9.5lRiI2X5szDnl91EPdvf2LDAdNXPkxm7zf42RJoX8sI
-authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY5MjM4MTE0MywiZXhwIjoxNjkyNTUzOTQzfQ.lDAu5DHz3VfKMctwCKYUvBtgahXezxssHA1DuvZFuys
+authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY5MzM5NTE5NiwiZXhwIjoxNjkzNTY3OTk2fQ.XeGv6BH-vUf6-C8bK1bjOo14Y5GppimGnT8tU5jEv8A
 
 {}
 
@@ -39,7 +46,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNh
 POST {{url_dev}}/product/publish/648fe0b59597d81ba3dd1356
 # POST {{url_dev}}/product/unpublish/648758e96bb0b3902eb54a3d
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4OTg0MDgwMywiZXhwIjoxNjkwMDEzNjAzfQ.RM9M9hxl-6gEw3K_JpBPndYEtmylmULK6Q-laO6I_BA
 
@@ -48,7 +55,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNh
 ### create Product
 POST {{url_dev}}/product
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY5MTkzOTIzNSwiZXhwIjoxNjkyMTEyMDM1fQ.zNu74qptGtPx-BWzjf529q-Y5wZFefw7GxnN0fpsrPI
 
@@ -69,7 +76,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNh
 ### update product
 PATCH {{url_dev}}/product/648bda529cbcb91ed8642ec7
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4OTg0MDgwMywiZXhwIjoxNjkwMDEzNjAzfQ.RM9M9hxl-6gEw3K_JpBPndYEtmylmULK6Q-laO6I_BA
 
@@ -92,7 +99,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNh
 ###Create Discount
 POST {{url_dev}}/discount
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY4OTg0MDgwMywiZXhwIjoxNjkwMDEzNjAzfQ.RM9M9hxl-6gEw3K_JpBPndYEtmylmULK6Q-laO6I_BA
 
@@ -128,7 +135,7 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
 ###Get amount when applies discount
 POST {{url_dev}}/discount/amount
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 
 {
 "code":"SHOPTUNA-40K",
@@ -147,8 +154,7 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
 ### Add to cart
 POST {{url_dev}}/cart
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
-
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 {
 "userId": 400,
 "product":
@@ -161,7 +167,7 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
 ### Delete cart item
 DELETE {{url_dev}}/cart
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 
 {
 "userId": 400,
@@ -172,7 +178,7 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
 ### Get list cart item
 GET {{url_dev}}/cart?userId=400
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 
 {
 "userId": 400
@@ -181,7 +187,7 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
 ### update cart item
 POST {{url_dev}}/cart/update
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 
 {
   "userId": 400,
@@ -207,7 +213,7 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
 ### checkout review
 POST {{url_dev}}/checkout/review 
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 
   #  cartId,
   #  userId,
@@ -248,7 +254,7 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
 ### Test redis
 GET  {{url_dev}}/redis
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 
 {}
 
@@ -256,7 +262,7 @@ x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906cc
 ### create comment
 POST {{url_dev}}/comment
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY5MTQ4OTA5NiwiZXhwIjoxNjkxNjYxODk2fQ.EWs3jYUDffOc5qBoiJwOQFpWbR4WBPk1UlfKiHLtx3M
 
@@ -278,7 +284,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNh
 ### get comment
 GET {{url_dev}}/comment
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY5MTQ4OTA5NiwiZXhwIjoxNjkxNjYxODk2fQ.EWs3jYUDffOc5qBoiJwOQFpWbR4WBPk1UlfKiHLtx3M
 
@@ -290,7 +296,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNh
 ### delete comments
 DELETE  {{url_dev}}/comment
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY5MTQ4OTA5NiwiZXhwIjoxNjkxNjYxODk2fQ.EWs3jYUDffOc5qBoiJwOQFpWbR4WBPk1UlfKiHLtx3M
 
@@ -302,7 +308,7 @@ authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNh
 ### Get Notification By User
 GET {{url_dev}}/notification
 Content-Type: application/json
-x-api-key : 74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
+x-api-key :74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c
 x-client-id: 647ed6cc3ac55a7f5842b8f6
 authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDdlZDZjYzNhYzU1YTdmNTg0MmI4ZjYiLCJlbWFpbCI6ImFiYzEyMzRAYWJjLmNvbSIsImlhdCI6MTY5MTkzOTIzNSwiZXhwIjoxNjkyMTEyMDM1fQ.zNu74qptGtPx-BWzjf529q-Y5wZFefw7GxnN0fpsrPI
 
