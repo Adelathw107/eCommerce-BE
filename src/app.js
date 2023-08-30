@@ -81,6 +81,7 @@ if (config.i18n.enable) {
 // Logs to discord
 app.use(pushToDiscord);
 
+
 // init routes
 app.use("", require("./routes/index.js"));
 
@@ -89,5 +90,10 @@ app.use(is404Handler);
 app.use(returnError);
 
 
+// init cron
+if (config.task.enable) {
+    const task = require('./tasks/collect-issue.task');
+    task.execute().start();
+}
 
 module.exports = app;

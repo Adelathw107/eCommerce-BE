@@ -19,6 +19,11 @@
             "date": 1693404260179,
             "name": "logs\\Ecommerce-2023-08-30-21.log",
             "hash": "b4d62db58c996a3ea8ee8221da6dd4197178921662d6a17f505b7304442ded22"
+        },
+        {
+            "date": 1693407795037,
+            "name": "logs\\Ecommerce-2023-08-30-22.log",
+            "hash": "88c75a89b8bb8458f58fd51b106e801bf3213736649ef50b1436a6601c6e1568"
         }
     ],
     "hashType": "sha256"

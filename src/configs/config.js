@@ -9,6 +9,9 @@ const config = {
         defaultLocale: process.env.LOCALE_DEFAULT,
         folderPath: ''
     },
+    task: {
+        enable: process.env.TASK_ENABLE
+    },
 
 };
 

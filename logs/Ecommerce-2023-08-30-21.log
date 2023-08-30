@@ -254,3 +254,428 @@
     timestamp: '2023-08-30T14:13:39.481Z'
   }
 }
+{
+  level: 'error',
+  message: 'Error: ',
+  metadata: {
+    metadata: { label: 'Ecommerce', timestamp: '2023-08-30T14:21:22.895Z' },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:21:22.897Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/shop/signoo',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signoo',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '81',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signoo',
+          query: {}
+        },
+        res: { statusCode: 401 },
+        responseTime: 39
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:21:22.911Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:21:22.912Z'
+  }
+}
+{
+  level: 'error',
+  message: 'HTTP POST /v1/api/shop/signoo',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signoo',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '81',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signoo',
+          query: {}
+        },
+        res: { statusCode: 500 },
+        responseTime: 3
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:24:07.987Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:24:07.992Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/shop/signoo',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signoo',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '81',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signoo',
+          query: {}
+        },
+        res: { statusCode: 401 },
+        responseTime: 26
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:24:32.726Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:24:32.729Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/shop/signoo',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signoo',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '81',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signoo',
+          query: {}
+        },
+        res: { statusCode: 401 },
+        responseTime: 26
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:25:39.902Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:25:39.906Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/shop/signpp',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signpp',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '81',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signpp',
+          query: {}
+        },
+        res: { statusCode: 404 },
+        responseTime: 8
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:32:33.072Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:32:33.074Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/shop/signUp',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signUp',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '81',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signUp',
+          query: {}
+        },
+        res: { statusCode: 404 },
+        responseTime: 1
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:32:41.984Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:32:41.985Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/shop/login',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/login',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '59',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/login',
+          query: {}
+        },
+        res: { statusCode: 404 },
+        responseTime: 2
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:32:46.360Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:32:46.360Z'
+  }
+}
+{
+  level: 'error',
+  message: 'HTTP POST /v1/api/shop/login',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/login',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '59',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/login',
+          query: {}
+        },
+        res: { statusCode: 500 },
+        responseTime: 3
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:39:48.873Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:39:48.878Z'
+  }
+}
+{
+  level: 'info',
+  message: 'HTTP POST /v1/api/shop/login',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/login',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '59',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/login',
+          query: {}
+        },
+        res: { statusCode: 200 },
+        responseTime: 160
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:40:01.435Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:40:01.435Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/shop/signUp',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signUp',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '81',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signUp',
+          query: {}
+        },
+        res: { statusCode: 403 },
+        responseTime: 28
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:40:03.570Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:40:03.571Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/shop/signUp',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signUp',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '81',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signUp',
+          query: {}
+        },
+        res: { statusCode: 403 },
+        responseTime: 17
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:40:08.264Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:40:08.264Z'
+  }
+}
+{
+  level: 'info',
+  message: 'HTTP POST /v1/api/shop/login',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/login',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '59',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/login',
+          query: {}
+        },
+        res: { statusCode: 200 },
+        responseTime: 155
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:40:32.401Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:40:32.404Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/k',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/k',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '59',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/k',
+          query: {}
+        },
+        res: { statusCode: 401 },
+        responseTime: 100
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T14:41:42.196Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T14:41:42.197Z'
+  }
+}
