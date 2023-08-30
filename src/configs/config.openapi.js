@@ -14,10 +14,6 @@ const options = {
             },
             {
                 url: `http://localhost:${process.env.PORT}`,
-                description: 'Uat server'
-            },
-            {
-                url: `http://localhost:${process.env.PORT}`,
                 description: 'Product server'
             },
         ],
@@ -34,7 +30,7 @@ const options = {
 
                     },
                     example: {
-                        "name": "Ta Duy Hoang",
+                        "name": "Huynh Tuan Kiet",
                     }
                 },
                 RequestUpdateCart: {
@@ -48,7 +44,7 @@ const options = {
 
                     },
                     example: {
-                        "name": "Ta Duy Hoang",
+                        "name": "Huynh Tuan Kiet",
                     }
                 },
                 RequestDeleteCart: {
@@ -62,7 +58,7 @@ const options = {
 
                     },
                     example: {
-                        "name": "Ta Duy Hoang",
+                        "name": "Huynh Tuan Kiet",
                     }
                 },
                 RequestRegister: {
@@ -87,7 +83,7 @@ const options = {
                         }
                     },
                     example: {
-                        "name": "Ta Duy Hoang",
+                        "name": "Huynh Tuan Kiet",
                         "email": "duyhoangaws@gmail.com",
                         "password": "123123a@",
                         "msisdn": "0948291994"
@@ -193,7 +189,7 @@ const options = {
                     example: {}
                 },
             },
-            responses : {
+            responses: {
                 400: {
                     description: 'Missing API key - include it in the Authorization header',
                     contents: 'application/json'
@@ -239,14 +235,10 @@ const options = {
             {
                 url: "/api-docs/swagger.json",
                 name: 'Json'
-            },
-            {
-                url: "/api-docs/swagger.yaml",
-                name: 'Yaml'
             }
         ]
 
     },
-}
+};
 
-module.exports = options
+module.exports = options;

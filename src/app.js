@@ -4,6 +4,11 @@ const morgan = require("morgan");
 const helmet = require("helmet");
 const compression = require("compression");
 const { openApi, configSwagger } = require("./configs/config.swagger.js");
+const expressWinston = require('express-winston');
+const { logger } = require('./configs/config.logger');
+const config = require("./configs/config.js");
+const { pushToDiscord } = require('./middlewares');
+const { is404Handler, returnError } = require("./middlewares/errorHandler.js");
 
 const app = express();
 
@@ -56,28 +61,33 @@ require("./dbs/init.mongodb.js");
 
 // init redis
 require('./dbs/init.redis.js');
+
+// init swagger
 configSwagger(app);
 openApi(app);
+
+// init logger
+app.use(expressWinston.logger({
+    winstonInstance: logger,
+    statusLevels: true
+}));
+
+// config i18n
+if (config.i18n.enable) {
+    const i18n = require("./configs/config.i18n.js");
+    app.use(i18n.init);
+}
+
+// Logs to discord
+app.use(pushToDiscord);
 
 // init routes
 app.use("", require("./routes/index.js"));
 
 // handling errors
-app.use(
-    (req, res, next) => {
-        const error = new Error("Not Found");
-        error.status = 404;
-        next(error);
-    });
-app.use(
-    (error, req, res, next) => {
-        const statusCode = error.status || 500;
-        return res.status(statusCode).json({
-            status: 'error',
-            code: statusCode,
-            stack: error.stack,
-            message: error.message || "Internal Server Error"
-        });
-    });
+app.use(is404Handler);
+app.use(returnError);
+
+
 
 module.exports = app;

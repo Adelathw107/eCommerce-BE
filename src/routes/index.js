@@ -1,12 +1,10 @@
 'use strict';
 
 const { apiKey, permission } = require('../auth/checkAuth');
-const { pushToDiscord } = require('../middlewares');
 
 const router = require('express').Router();
 
 // Push logs to discord
-router.use(pushToDiscord)
 
 // Check api key 
 router.use(apiKey)

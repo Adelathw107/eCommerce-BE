@@ -1,0 +1,73 @@
+{"label":"Ecommerce","level":"info","message":"HTTP POST /v1/api/shop/login","metadata":{"label":"Ecommerce","meta":{"req":{"headers":{"accept-encoding":"gzip, deflate","connection":"close","content-length":"60","content-type":"application/json","host":"localhost:3052","user-agent":"vscode-restclient","x-api-key":"74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c"},"httpVersion":"1.1","method":"POST","originalUrl":"/v1/api/shop/login","query":{},"url":"/v1/api/shop/login"},"res":{"statusCode":200},"responseTime":167},"timestamp":"2023-08-30T12:35:57.875Z"}}
+{"label":"Ecommerce","level":"warn","message":"HTTP POST /v1/api/shop/login","metadata":{"label":"Ecommerce","meta":{"req":{"headers":{"accept-encoding":"gzip, deflate","connection":"close","content-length":"56","content-type":"application/json","host":"localhost:3052","user-agent":"vscode-restclient","x-api-key":"74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c"},"httpVersion":"1.1","method":"POST","originalUrl":"/v1/api/shop/login","query":{},"url":"/v1/api/shop/login"},"res":{"statusCode":403},"responseTime":13},"timestamp":"2023-08-30T12:36:04.295Z"}}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/shop/login',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/login',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '56',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/login',
+          query: {}
+        },
+        res: { statusCode: 403 },
+        responseTime: 24
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T12:44:03.320Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T12:44:03.322Z'
+  }
+}
+
+{
+  level: 'error',
+  message: 'Error connecting to MongoDB: Unable to parse 127.0.0.1:270176 with URL',
+  metadata: {
+    metadata: {
+      cause: TypeError [ERR_INVALID_URL]: Invalid URL
+          at new NodeError (node:internal/errors:405:5)
+          at new URL (node:internal/url:743:13)
+          at new HostAddress (H:\NodejsEcommerce\node_modules\mongodb\lib\utils.js:753:19)
+          at fromString (H:\NodejsEcommerce\node_modules\mongodb\lib\utils.js:798:16)
+          at Array.map (<anonymous>)
+          at parseOptions (H:\NodejsEcommerce\node_modules\mongodb\lib\connection_string.js:200:45)
+          at new MongoClient (H:\NodejsEcommerce\node_modules\mongodb\lib\mongo_client.js:48:63)
+          at _createMongoClient (H:\NodejsEcommerce\node_modules\mongoose\lib\connection.js:887:14)
+          at NativeConnection.openUri (H:\NodejsEcommerce\node_modules\mongoose\lib\connection.js:742:29)
+          at Mongoose.connect (H:\NodejsEcommerce\node_modules\mongoose\lib\index.js:406:15) {
+        input: 'iLoveJS://127.0.0.1:270176',
+        code: 'ERR_INVALID_URL'
+      },
+      stack: 'MongoRuntimeError: Unable to parse 127.0.0.1:270176 with URL\n' +
+        '    at new HostAddress (H:\\NodejsEcommerce\\node_modules\\mongodb\\lib\\utils.js:756:34)\n' +
+        '    at fromString (H:\\NodejsEcommerce\\node_modules\\mongodb\\lib\\utils.js:798:16)\n' +
+        '    at Array.map (<anonymous>)\n' +
+        '    at parseOptions (H:\\NodejsEcommerce\\node_modules\\mongodb\\lib\\connection_string.js:200:45)\n' +
+        '    at new MongoClient (H:\\NodejsEcommerce\\node_modules\\mongodb\\lib\\mongo_client.js:48:63)\n' +
+        '    at _createMongoClient (H:\\NodejsEcommerce\\node_modules\\mongoose\\lib\\connection.js:887:14)\n' +
+        '    at NativeConnection.openUri (H:\\NodejsEcommerce\\node_modules\\mongoose\\lib\\connection.js:742:29)\n' +
+        '    at Mongoose.connect (H:\\NodejsEcommerce\\node_modules\\mongoose\\lib\\index.js:406:15)\n' +
+        '    at Database.connect (H:\\NodejsEcommerce\\src\\dbs\\init.mongodb.js:22:22)\n' +
+        '    at new Database (H:\\NodejsEcommerce\\src\\dbs\\init.mongodb.js:13:10)',
+      label: 'Ecommerce',
+      timestamp: '2023-08-30T12:55:54.594Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-30T12:55:54.599Z'
+  },
+  [Symbol(errorLabels)]: Set(0) {}
+}

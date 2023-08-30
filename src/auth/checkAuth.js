@@ -1,5 +1,6 @@
 'use strict';
 
+const { logger } = require("../configs/config.logger");
 const { findById } = require("../services/apiKey.service");
 
 
@@ -26,7 +27,7 @@ const apiKey = async (req, res, next) => {
         req.objKey = objKey;
         return next();
     } catch (error) {
-        console.error(`Error:: `, error);
+        logger.error(`Error doing generate apikey:: `, error);
     }
 };
 const permission = (permission) => {

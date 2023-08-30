@@ -1,7 +1,7 @@
-const {I18n} = require('i18n')
+const { I18n } = require('i18n');
 const path = require("path");
-const anyObject = {}
-const {i18n: {locales, defaultLocale}, app: {env}} = require('./config')
+const anyObject = {};
+const { i18n: { locales, defaultLocale } } = require('./config');
 
 
 const i18n = new I18n({
@@ -57,22 +57,22 @@ const i18n = new I18n({
 
     // setting of log level DEBUG - default to require('debug')('i18n:debug')
     logDebugFn: function (msg) {
-        console.log('debug', msg)
+        console.log('debug', msg);
     },
 
     // setting of log level WARN - default to require('debug')('i18n:warn')
     logWarnFn: function (msg) {
-        console.log('warn', msg)
+        console.log('warn', msg);
     },
 
     // setting of log level ERROR - default to require('debug')('i18n:error')
     logErrorFn: function (msg) {
-        console.log('error', msg)
+        console.log('error', msg);
     },
 
     // used to alter the behaviour of missing keys
     missingKeyFn: function (locale, value) {
-        return value
+        return value;
     },
 
     // object or [obj1, obj2] to bind the i18n api and current locale to - defaults to null
@@ -111,8 +111,8 @@ const i18n = new I18n({
     parser: JSON,
 
     directory: path.join(__dirname, "locales")
-})
+});
 
-i18n.translate = (text, ...parameters) => i18n.__(text, ...parameters)
+i18n.translate = (text, ...parameters) => i18n.__(text, ...parameters);
 
-module.exports = i18n
+module.exports = i18n;

@@ -4,6 +4,7 @@ const JWT = require('jsonwebtoken');
 const { asyncHandler } = require('../helpers/asyncHandler');
 const { AuthFailureError, NotFoundError } = require('../core/error.response');
 const { findByUserId } = require('../services/keyToken.service');
+const { logger } = require('../configs/config.logger');
 
 const HEADER = {
     API_KEY: 'x-api-key',
@@ -27,9 +28,7 @@ const createTokenPair = async (payload, publicKey, privateKey) => {
         // Verify
         JWT.verify(accessToken, publicKey, (err, decode) => {
             if (err) {
-                console.error(`error verify::`, err);
-            } else {
-                console.log(`decode verify:: `, decode);
+                logger.error(`Error verify::`, err);
             }
         });
 
@@ -82,7 +81,7 @@ const authenticationV2 = asyncHandler(async (req, res, next) => {
     try {
         const decodeUser = verifyJWT(accessToken, keyStore.publicKey, (err) => {
             if (err) {
-                console.error(`error verify::`, err);
+                logger.error(`error verify::`, err);
             }
         });
         if (userId !== decodeUser.userId) throw new AuthFailureError("Invalid UserId");

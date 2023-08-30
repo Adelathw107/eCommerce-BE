@@ -1,5 +1,6 @@
 'use strict';
 
+const { logger } = require("../configs/config.logger");
 const { BadRequestError } = require("../core/error.response");
 const { product, clothing, electronic, furniture } = require("../models/product.model");
 const { insertInventory } = require("../models/repository/inventory.repo");
@@ -124,7 +125,7 @@ class Product {
                     'shop_name': this.product_shop
                 }
             }).then(rs => console.log("resultt:::", rs))
-                .catch(console.error);
+                .catch(logger.error);
         }
         return newProduct;
     }
