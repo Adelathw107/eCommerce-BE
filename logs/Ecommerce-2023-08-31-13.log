@@ -1,0 +1,32 @@
+{
+  level: 'info',
+  message: 'HTTP POST /v1/api/shop/signUp',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signUp',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '87',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signUp',
+          query: {}
+        },
+        res: { statusCode: 201 },
+        responseTime: 191
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-31T06:02:36.590Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-31T06:02:36.592Z'
+  }
+}
