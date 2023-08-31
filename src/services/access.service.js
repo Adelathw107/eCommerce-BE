@@ -8,6 +8,7 @@ const { getInfoData } = require('../utils/index.js');
 const { BadRequestError, AuthFailureError, ForbiddenError } = require('../core/error.response.js');
 const { findByEmail } = require('./shop.service.js');
 const { userValidate } = require('../helpers/validation.js');
+const sendMail = require('./mailer.service.js');
 
 const roleShop = {
     SHOP: 'SHOP',
@@ -125,6 +126,7 @@ class AccessService {
             const message = error.details[0].message;
             throw new BadRequestError(message);
         }
+
         // step 1: Check mail exist ?
         const holdelShop = await shopModel.findOne({ email }).lean();
 
@@ -138,6 +140,7 @@ class AccessService {
 
         if (newShop) {
 
+            sendMail(email);
             const privateKey = crypto.randomBytes(64).toString('hex');
             const publicKey = crypto.randomBytes(64).toString('hex');
 

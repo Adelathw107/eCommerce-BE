@@ -1,0 +1,282 @@
+{
+  level: 'info',
+  message: 'HTTP POST /v1/api/shop/signUp',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signUp',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '87',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signUp',
+          query: {}
+        },
+        res: { statusCode: 201 },
+        responseTime: 211
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-31T05:12:29.588Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-31T05:12:29.589Z'
+  }
+}
+{
+  level: 'error',
+  message: 'Error to send mail:: invalid_grant',
+  metadata: {
+    metadata: {
+      config: {
+        method: 'POST',
+        url: 'https://oauth2.googleapis.com/token',
+        data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'User-Agent': 'google-api-nodejs-client/9.0.0',
+          'x-goog-api-client': 'gl-node/20.3.0'
+        },
+        paramsSerializer: [Function: paramsSerializer],
+        body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+        validateStatus: [Function: validateStatus],
+        responseType: 'unknown',
+        errorRedactor: [Function: defaultErrorRedactor]
+      },
+      response: {
+        config: {
+          method: 'POST',
+          url: 'https://oauth2.googleapis.com/token',
+          data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'User-Agent': 'google-api-nodejs-client/9.0.0',
+            'x-goog-api-client': 'gl-node/20.3.0'
+          },
+          paramsSerializer: [Function: paramsSerializer],
+          body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+          validateStatus: [Function: validateStatus],
+          responseType: 'unknown',
+          errorRedactor: [Function: defaultErrorRedactor]
+        },
+        data: {
+          error: 'invalid_grant',
+          error_description: 'Token has been expired or revoked.'
+        },
+        headers: {
+          'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+          'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+          connection: 'close',
+          'content-encoding': 'gzip',
+          'content-type': 'application/json; charset=utf-8',
+          date: 'Thu, 31 Aug 2023 05:12:53 GMT',
+          expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+          pragma: 'no-cache',
+          server: 'scaffolding on HTTPServer2',
+          'transfer-encoding': 'chunked',
+          vary: 'Origin, X-Origin, Referer',
+          'x-content-type-options': 'nosniff',
+          'x-frame-options': 'SAMEORIGIN',
+          'x-xss-protection': '0'
+        },
+        status: 400,
+        statusText: 'Bad Request',
+        request: { responseURL: 'https://oauth2.googleapis.com/token' }
+      },
+      error: undefined,
+      status: 400,
+      stack: 'Error: invalid_grant\n' +
+        '    at Gaxios._request (H:\\NodejsEcommerce\\node_modules\\gaxios\\build\\src\\gaxios.js:141:23)\n' +
+        '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+        '    at async OAuth2Client.refreshTokenNoCache (H:\\NodejsEcommerce\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:178:19)\n' +
+        '    at async OAuth2Client.refreshAccessTokenAsync (H:\\NodejsEcommerce\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:212:19)\n' +
+        '    at async OAuth2Client.getAccessTokenAsync (H:\\NodejsEcommerce\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:241:23)\n' +
+        '    at async sendMail (H:\\NodejsEcommerce\\src\\services\\mailer.service.js:15:29)',
+      label: 'Ecommerce',
+      timestamp: '2023-08-31T05:12:29.821Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-31T05:12:29.822Z'
+  }
+}
+{
+  level: 'warn',
+  message: 'HTTP POST /v1/api/shop/signUp',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signUp',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '87',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signUp',
+          query: {}
+        },
+        res: { statusCode: 403 },
+        responseTime: 34
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-31T05:13:40.285Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-31T05:13:40.287Z'
+  }
+}
+{
+  level: 'error',
+  message: 'Error to send mail:: invalid_grant',
+  metadata: {
+    metadata: {
+      config: {
+        method: 'POST',
+        url: 'https://oauth2.googleapis.com/token',
+        data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'User-Agent': 'google-api-nodejs-client/9.0.0',
+          'x-goog-api-client': 'gl-node/20.3.0'
+        },
+        paramsSerializer: [Function: paramsSerializer],
+        body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+        validateStatus: [Function: validateStatus],
+        responseType: 'unknown',
+        errorRedactor: [Function: defaultErrorRedactor]
+      },
+      response: {
+        config: {
+          method: 'POST',
+          url: 'https://oauth2.googleapis.com/token',
+          data: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'User-Agent': 'google-api-nodejs-client/9.0.0',
+            'x-goog-api-client': 'gl-node/20.3.0'
+          },
+          paramsSerializer: [Function: paramsSerializer],
+          body: '<<REDACTED> - See `errorRedactor` option in `gaxios` for configuration>.',
+          validateStatus: [Function: validateStatus],
+          responseType: 'unknown',
+          errorRedactor: [Function: defaultErrorRedactor]
+        },
+        data: {
+          error: 'invalid_grant',
+          error_description: 'Token has been expired or revoked.'
+        },
+        headers: {
+          'alt-svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000',
+          'cache-control': 'no-cache, no-store, max-age=0, must-revalidate',
+          connection: 'close',
+          'content-encoding': 'gzip',
+          'content-type': 'application/json; charset=utf-8',
+          date: 'Thu, 31 Aug 2023 05:14:58 GMT',
+          expires: 'Mon, 01 Jan 1990 00:00:00 GMT',
+          pragma: 'no-cache',
+          server: 'scaffolding on HTTPServer2',
+          'transfer-encoding': 'chunked',
+          vary: 'Origin, X-Origin, Referer',
+          'x-content-type-options': 'nosniff',
+          'x-frame-options': 'SAMEORIGIN',
+          'x-xss-protection': '0'
+        },
+        status: 400,
+        statusText: 'Bad Request',
+        request: { responseURL: 'https://oauth2.googleapis.com/token' }
+      },
+      error: undefined,
+      status: 400,
+      stack: 'Error: invalid_grant\n' +
+        '    at Gaxios._request (H:\\NodejsEcommerce\\node_modules\\gaxios\\build\\src\\gaxios.js:141:23)\n' +
+        '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+        '    at async OAuth2Client.refreshTokenNoCache (H:\\NodejsEcommerce\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:178:19)\n' +
+        '    at async OAuth2Client.refreshAccessTokenAsync (H:\\NodejsEcommerce\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:212:19)\n' +
+        '    at async OAuth2Client.getAccessTokenAsync (H:\\NodejsEcommerce\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:241:23)\n' +
+        '    at async sendMail (H:\\NodejsEcommerce\\src\\services\\mailer.service.js:15:29)\n' +
+        '    at async AccessService.signUp (H:\\NodejsEcommerce\\src\\services\\access.service.js:143:13)\n' +
+        '    at async signUp (H:\\NodejsEcommerce\\src\\controllers\\access.controller.js:34:23)',
+      label: 'Ecommerce',
+      timestamp: '2023-08-31T05:14:34.902Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-31T05:14:34.903Z'
+  }
+}
+{
+  level: 'info',
+  message: 'HTTP POST /v1/api/shop/signUp',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signUp',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '87',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signUp',
+          query: {}
+        },
+        res: { statusCode: 201 },
+        responseTime: 490
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-31T05:14:34.951Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-31T05:14:34.951Z'
+  }
+}
+{
+  level: 'info',
+  message: 'HTTP POST /v1/api/shop/signUp',
+  metadata: {
+    metadata: {
+      meta: {
+        req: {
+          url: '/v1/api/shop/signUp',
+          headers: {
+            'user-agent': 'vscode-restclient',
+            'content-type': 'application/json',
+            'x-api-key': '74f7de29dca768cca482da72a925dfced4ee6a744b3b087b9d630bfac3ca163906ccccf7084b76d2bc8e80bcd404dd1c43bc7c4b3fbf1eef50e66485de5f252c',
+            'accept-encoding': 'gzip, deflate',
+            'content-length': '87',
+            host: 'localhost:3052',
+            connection: 'close'
+          },
+          method: 'POST',
+          httpVersion: '1.1',
+          originalUrl: '/v1/api/shop/signUp',
+          query: {}
+        },
+        res: { statusCode: 201 },
+        responseTime: 3155
+      },
+      label: 'Ecommerce',
+      timestamp: '2023-08-31T05:58:41.351Z'
+    },
+    label: 'Ecommerce',
+    timestamp: '2023-08-31T05:58:41.353Z'
+  }
+}

@@ -24,6 +24,21 @@
             "date": 1693407795037,
             "name": "logs\\Ecommerce-2023-08-30-22.log",
             "hash": "88c75a89b8bb8458f58fd51b106e801bf3213736649ef50b1436a6601c6e1568"
+        },
+        {
+            "date": 1693441038631,
+            "name": "logs\\Ecommerce-2023-08-31-07.log",
+            "hash": "61f235d950e02b3f4c665fd5f3add1e9400146299d7facb6247db86138c03fe8"
+        },
+        {
+            "date": 1693458482771,
+            "name": "logs\\Ecommerce-2023-08-31-12.log",
+            "hash": "d73f9fc8eee5a1537edde2213ca42ae983a967b7880dd5e79ef80f6031a6668f"
+        },
+        {
+            "date": 1693461674745,
+            "name": "logs\\Ecommerce-2023-08-31-13.log",
+            "hash": "76b42e37960518aa8238516b8a7152a33b519c1617ae62be27b987d0f1d7b929"
         }
     ],
     "hashType": "sha256"

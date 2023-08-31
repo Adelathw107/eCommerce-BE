@@ -73,7 +73,7 @@ app.use(expressWinston.logger({
 }));
 
 // config i18n
-if (config.i18n.enable) {
+if (config.i18n.enable === true) {
     const i18n = require("./configs/config.i18n.js");
     app.use(i18n.init);
 }
@@ -91,7 +91,7 @@ app.use(returnError);
 
 
 // init cron
-if (config.task.enable) {
+if (config.task.enable === true) {
     const task = require('./tasks/collect-issue.task');
     task.execute().start();
 }
