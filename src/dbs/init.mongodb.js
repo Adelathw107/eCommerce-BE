@@ -1,12 +1,14 @@
 "use strict";
+
 const mongoose = require("mongoose");
-const {
-  db: { host, port, name },
-} = require("../configs/config.mongodb.js");
-const { logger } = require("../configs/config.logger.js");
+// const {
+//   db: { host, port, name },
+// } = require("../configs/config.mongodb.js");
+// const { logger } = require("../configs/config.logger.js");
 // const { countConnect, checkOverLoad } = require("../helpers/check.connect.js");
 
-const connectString = `mongodb://${host}:${port}/${name}`;
+// const connectString = `mongodb://${host}:${port}/${name}`;
+const connectString = process.env.CONNECT_MONGO_DB;
 
 class Database {
   constructor() {
@@ -24,7 +26,8 @@ class Database {
       // countConnect();
       // checkOverLoad();
     } catch (error) {
-      logger.error("Error connecting to MongoDB:", error);
+      // logger.error("Error connecting to MongoDB:", error);
+      console.log("Error connecting to MongoDB:", error);      
     }
   }
 

@@ -1,14 +1,15 @@
+
 require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const compression = require("compression");
-const { openApi, configSwagger } = require("./configs/config.swagger.js");
-const expressWinston = require('express-winston');
-const { logger } = require('./configs/config.logger');
-const config = require("./configs/config.js");
-const { pushToDiscord } = require('./middlewares');
-const { is404Handler, returnError } = require("./middlewares/errorHandler.js");
+// const { openApi, configSwagger } = require("./configs/config.swagger.js");
+// const expressWinston = require('express-winston');
+// const { logger } = require('./configs/config.logger');
+// const config = require("./configs/config.js");
+// const { pushToDiscord } = require('./middlewares');
+// const { is404Handler, returnError } = require("./middlewares/errorHandler.js");
 
 const app = express();
 
@@ -60,40 +61,40 @@ require("./dbs/init.mongodb.js");
 // checkOverLoad();
 
 // init redis
-require('./dbs/init.redis.js');
+// require('./dbs/init.redis.js');
 
 // init swagger
-configSwagger(app);
-openApi(app);
+// configSwagger(app);
+// openApi(app);
 
 // init logger
-app.use(expressWinston.logger({
-    winstonInstance: logger,
-    statusLevels: true
-}));
+// app.use(expressWinston.logger({
+//     winstonInstance: logger,
+//     statusLevels: true
+// }));
 
 // config i18n
-if (config.i18n.enable === true) {
-    const i18n = require("./configs/config.i18n.js");
-    app.use(i18n.init);
-}
+// if (config.i18n.enable === true) {
+//     const i18n = require("./configs/config.i18n.js");
+//     app.use(i18n.init);
+// }
 
 // Logs to discord
-app.use(pushToDiscord);
+// app.use(pushToDiscord);
 
 
 // init routes
 app.use("", require("./routes/index.js"));
 
 // handling errors
-app.use(is404Handler);
-app.use(returnError);
+// app.use(is404Handler);
+// app.use(returnError);
 
 
 // init cron
-if (config.task.enable === true) {
-    const task = require('./tasks/collect-issue.task');
-    task.execute().start();
-}
+// if (config.task.enable === true) {
+//     const task = require('./tasks/collect-issue.task');
+//     task.execute().start();
+// }
 
 module.exports = app;
