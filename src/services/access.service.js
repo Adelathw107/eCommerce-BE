@@ -1,15 +1,16 @@
 "use strict";
 
-const shopModel = require("../models/shop.model")
-const bcrypt = require("bcrypt")
-const crypto = require("crypto")
+const shopModel = require("../models/shop.model");
+const bcrypt = require("bcrypt");
+const crypto = require("crypto");
+const KeyTokenService = require("./keyToken.service");
 
 const RoleShop = {
-    SHOP: 'SHOP',
-    WRITER: 'WRITER',
-    EDITOR: 'EDITOR',
-    ADMIN: 'ADMIN'
-}
+  SHOP: "SHOP",
+  WRITER: "WRITER",
+  EDITOR: "EDITOR",
+  ADMIN: "ADMIN",
+};
 
 class AccessService {
   static signUp = async ({ name, email, password }) => {
@@ -24,19 +25,35 @@ class AccessService {
         };
       }
 
-      const passwordHash = await bcrypt.hash(password, 10)
+      const passwordHash = await bcrypt.hash(password, 10);
       const newShop = await shopModel.create({
-        name, email, password: passwordHash, roles: [RoleShop.SHOP]
-      })
+        name,
+        email,
+        password: passwordHash,
+        roles: [RoleShop.SHOP],
+      });
 
-      if(newShop) {
+      if (newShop) {
         // created privateKey, publicKey
-        const { privateKey, publicKey } = crypto.generateKeyPairSync('rsa', {
-            modulusLength: 2048
-        })
+        const { privateKey, publicKey } = crypto.generateKeyPairSync("rsa", {
+          modulusLength: 2048,
+        });
 
-        console.log({privateKey, publicKey}); // save collection KeyStore
+        console.log({ privateKey, publicKey });
+
+        const publicKeyString = await KeyTokenService.createKeyToken({
+          userid: newShop._id,
+          publicKey,
+        });
       }
+
+      if (!publicKeyString) {
+        return {
+          code: "xxx",
+          message: "publicKeyString error",
+        };
+      }
+      // const tokens = await
     } catch (error) {
       return {
         code: "xxx",
