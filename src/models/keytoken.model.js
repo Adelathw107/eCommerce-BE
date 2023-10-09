@@ -1,7 +1,7 @@
 "use strict";
 
 // !dmbg
-const { model, Schema } = require("mongoose"); // Erase if already required
+const { Schema, model } = require("mongoose"); // Erase if already required
 
 const DOCUMENT_NAME = "Key";
 const COLLECTION_NAME = "Keys";
@@ -10,18 +10,17 @@ const COLLECTION_NAME = "Keys";
 var keyTokenSchema = new Schema(
   {
     user: {
-      type: String,
-      trime: true,
-      maxLength: 150,
+      type: Schema.Types.ObjectId,
+      required: true,
+      ref: "Shop",
     },
     publicKey: {
       type: String,
-      unique: true,
-      trim: true,
+      required: true,
     },
     refreshToken: {
-      type: String,
-      required: true,
+      type: Array,
+      default: [],
     },
   },
   {
@@ -31,4 +30,4 @@ var keyTokenSchema = new Schema(
 );
 
 //Export the model
-module.exports = model(DOCUMENT_NAME, shopSchema);
+module.exports = model(DOCUMENT_NAME, keyTokenSchema);

@@ -39,11 +39,9 @@ app.use(helmet.referrerPolicy({
 app.use(compression({
     level: 6,// level compress
     threshold: 100 * 1024, // > 100kb threshold to compress
-
     filter: (req) => {
         return !req.headers['x-no-compress'];
     }
-
 }));
 
 app.use(express.json());
